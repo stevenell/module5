@@ -1,0 +1,69 @@
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="stylez.css">
+    <title>Steven Ellingson Assignment 5</title>
+   
+</head>
+
+<body>
+
+<h1>DATA 607 Assignment 5</h1>
+<h1>Steven Ellingson</h1>
+
+
+
+<script type="text/javascript">
+
+function reverse_string() {
+    var rev = document.getElementById("reversed_string");
+    
+    var str = document.getElementById("string_to_reverse").value.split("").reverse().join("");
+    rev.innerHTML = "<br>"+str+"<br>";
+}
+
+function get_multiples() {
+    var mul = document.getElementById("multiplied_html");
+    var input = document.getElementById("number_to_multiply").value;
+    var i = 0;
+    var output = "<table>\n<tr>";
+
+    while (i < 20) {
+        i++;
+        if ((i - 1) % 5 === 0) {
+            output = output.concat("</tr>\n<tr>");
+        }
+        output = output.concat("<td>", i * input, "</td>");
+    }
+    mul.innerHTML = output;
+}
+
+
+</script>
+
+<h2>Input a string to reverse it!</h2>
+
+<form id="reverse_form" onsubmit="reverse_string();return false">
+    <input id="string_to_reverse" type="text" size="10">
+    <button id= "reverse_button" type="submit">"Turn it Around"</button>
+    <input type="submit" style="display: none" />
+</form>
+
+
+<div id="reversed_string"></div>
+
+<h2>Input a number below to get a table of 20 multiples </h2>
+<p>
+<!--<form id="multiply_form">-->
+    <form id="multiply_form" onsubmit="get_multiples();return false">
+    <input id="number_to_multiply" type="number" size="4">
+    <button id= "multiply_button" type="submit">Multiply!</button>
+    <input type="submit" style="display: none" />
+</form>
+</p>
+
+<div id="multiplied_html"></div>
+
+</body>
+</html>
